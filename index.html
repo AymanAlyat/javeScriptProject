@@ -18,9 +18,29 @@
         <input id="taskInput" type="text" placeholder="Add new task..." />
       </div>
       <button id="addTaskBtn">Add new task</button>
-      
+
       <div id="inputError" class="error"></div><!--محل فاضي عشان لما يصير خطا يطلع هون-->
     </div>
+
+
+
+    <h2>Todo List</h2>
+
+    <div class="tabs">
+      <button class="tabBtn active" data-tab="all">All</button><!--عشان امسكهن بالجافا سكربت عن طريق الاتريبيوت-->
+      <button class="tabBtn" data-tab="done">Done</button><!--ليش ما مسكتهن بنفس الكلاس لانهن نفس الكلاس ونفس الاشي بس بفرقن بالوظيفه-->
+      <button class="tabBtn" data-tab="todo">Todo</button>
+    </div>
+
+    <div id="todoList" class="todo-list"></div>
+
+    <div class="footer-btns">
+      <button id="deleteDoneBtn" class="footer-btn delete-done">Delete Done Tasks</button>
+      <button id="deleteAllBtn" class="footer-btn delete-all">Delete All Tasks</button>
+    </div>
+
+    
+  </div>
 
     
 
