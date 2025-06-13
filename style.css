@@ -54,3 +54,25 @@ h2 {
    border-radius: 0 4px 4px 0;
   
 }
+
+#error, .error {/*رح نشتغل عليه بالجافا سكربت عشان يبين خلال حدث معين هس حاليا لا تهتم*/
+  color: rgb(242, 9, 9);
+  
+  margin-top: 10px;
+  min-height: 15px;
+}
+
+#addTaskBtn {
+  width: 100%;
+  background: #0099bb;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  /*عشانيصيرلماالماوس تيجي عليه يصير زي اصبع*/transition: background 0.2s ease;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
