@@ -76,3 +76,26 @@ h2 {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
+
+
+
+.tabs {
+  
+ display: flex; /*الهدف بس عشان استخدم الفراغات يعني جااااب*/
+ 
+ gap: 15px;
+}
+
+.tabBtn {
+  flex: 1;/*بعطي عرض متساوي بدل ما تحسب يدوي وتقعد تقول ثلث ومش ثلث*/
+  /*width: 33%;*//*نفس فلكس 1 بس اشي جديد  الفلكس1*/
+  background: #0099bb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 10px;
+  
+  cursor: pointer;
+  
+  transition: background 0.2s ease;
+}
