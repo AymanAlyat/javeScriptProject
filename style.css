@@ -36,3 +36,21 @@ h2 {
   
   margin-bottom: 16px;
 }
+
+
+.input-icon {
+  background: #0099bb;
+ 
+  padding: 8px 12px;
+  border-radius: 4px 0 0 4px;
+ 
+}
+
+#taskInput {
+  
+  padding: 10px;
+  border: 1px solid #ccc;
+
+   border-radius: 0 4px 4px 0;
+  
+}
