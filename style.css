@@ -99,3 +99,23 @@ h2 {
   
   transition: background 0.2s ease;
 }
+
+
+.footer-btns {
+  display: flex;
+  gap: 16px;
+  margin-top: 15px;
+}
+
+/*/////////////////////////////////////////////////////////Breake/////////////////////////////////*/
+.footer-btn {
+  flex: 1;/*زي ما حكينا فوق يعني فش تداعي تقعد تحسب بالعرض خلص حط هاي احسن */
+
+  padding: 14px 0;
+
+  font-size: 1.1em;
+  border: none;
+
+  border-radius: 4px;
+  cursor: pointer;
+}
