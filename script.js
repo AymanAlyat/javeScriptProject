@@ -6,7 +6,7 @@ taskInput.addEventListener("input", () => {
 }); /*يعني بالمختصر بمنع المستخدم يدخل قيمه فاضيه */
 
 
-
+const todoList = document.getElementById("todoList");
 
 
 
@@ -31,14 +31,13 @@ addTaskBtn.addEventListener("click", () => {
     const taskItem = document.createElement("div");
     taskItem.textContent = taskText;
     taskItem.classList.add("todo-item"); 
-    todoList.appendChild(taskItem); //هاي ضروريه عشان اضيف بدونها ما بضيف
 
 
 
     taskInput.value = "";          // كاني عملت ريست يعني فضيتواا
     addTaskBtn.disabled = true;    // الكبسه خليناها معطله لانه صار فاضي
-  }
-});
+  
+
 
 
 const taskTextSpan = document.createElement("span"); //عشان اتحكم بالنص ك نص بدي اعمل سبان انا حر بجوز يجي عبالي الون شغلات معينه
@@ -59,3 +58,7 @@ taskTextSpan.classList.add("todo-text");
     deleteBtn.addEventListener("click", () => {
       taskItem.remove();
     });
+ todoList.appendChild(taskItem); //هاي ضروريه عشان اضيف بدونها ما بضيف
+}
+    });
+       // todoList.appendChild(taskItem); //هاي ضروريه عشان اضيف بدونها ما بضيف
