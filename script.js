@@ -40,5 +40,8 @@ addTaskBtn.addEventListener("click", () => {
   }
 });
 
+
 const taskTextSpan = document.createElement("span");
+
+taskTextSpan.textContent = taskText;
 
