@@ -46,9 +46,13 @@ const taskTextSpan = document.createElement("span"); //عشان اتحكم با�
 taskTextSpan.textContent = taskText;
 
 taskTextSpan.classList.add("todo-text");
-
+ taskItem.appendChild(taskTextSpan);
 //
  const deleteBtn = document.createElement("button");
   
  deleteBtn.textContent = "🗑"; //windows + . ايموجي 
  deleteBtn.classList.add("delete-btn");
+
+ 
+   
+  
