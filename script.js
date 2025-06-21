@@ -41,9 +41,13 @@ addTaskBtn.addEventListener("click", () => {
 });
 
 
-const taskTextSpan = document.createElement("span");
-
+const taskTextSpan = document.createElement("span"); //عشان اتحكم بالنص ك نص بدي اعمل سبان انا حر بجوز يجي عبالي الون شغلات معينه
+// هون بعدين بدنا نخلي جوا كل مهمه ثلاث عناصر النص نفسه وسله الزباله والصح  وهاي هون النص
 taskTextSpan.textContent = taskText;
 
 taskTextSpan.classList.add("todo-text");
+
+//
+ const deleteBtn = document.createElement("button");
+  
 
