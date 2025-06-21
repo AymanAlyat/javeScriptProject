@@ -56,4 +56,6 @@ taskTextSpan.classList.add("todo-text");
    taskItem.appendChild(deleteBtn);
 
    
-  
+    deleteBtn.addEventListener("click", () => {
+      taskItem.remove();
+    });
