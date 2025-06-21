@@ -45,3 +45,5 @@ const taskTextSpan = document.createElement("span");
 
 taskTextSpan.textContent = taskText;
 
+taskTextSpan.classList.add("todo-text");
+
