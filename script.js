@@ -50,4 +50,5 @@ taskTextSpan.classList.add("todo-text");
 //
  const deleteBtn = document.createElement("button");
   
-
+ deleteBtn.textContent = "🗑"; //windows + . ايموجي 
+   
