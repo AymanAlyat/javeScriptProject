@@ -53,6 +53,7 @@ taskTextSpan.classList.add("todo-text");
  deleteBtn.textContent = "🗑"; //windows + . ايموجي 
  deleteBtn.classList.add("delete-btn");
 
- 
+   taskItem.appendChild(deleteBtn);
+
    
   
