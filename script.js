@@ -39,3 +39,12 @@ const updateFooterBtns = () => {
         btn.style.cursor = btn.disabled ? 'not-allowed' : 'pointer';
     });
 };
+
+const validateText = txt => {
+    const trimmed = txt.trim();
+    if (!trimmed) return 'Task cannot be empty.';
+    if (/^\d/.test(trimmed)) return 'Task must not start with a number.';
+    if (trimmed.length < 5) return 'Task must be at least 5 characters.';
+    return ''; // صحيح
+};
+
