@@ -58,7 +58,7 @@ taskTextSpan.classList.add("todo-text");
    
 doneBtn.textContent = "✔";
 
-
+doneBtn.classList.add("done-btn");
 
 
     deleteBtn.addEventListener("click", () => {
