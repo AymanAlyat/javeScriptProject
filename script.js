@@ -157,3 +157,49 @@ const renderList = () => {
 
     updateFooterBtns();
 };
+
+
+
+const addTask = () => {
+    const message = validateText(taskInput.value);
+    if (message) { inputErrorBox.textContent = message; return; }
+    inputErrorBox.textContent = '';
+
+    tasks.push({ id: uid(), text: taskInput.value.trim(), done: false });
+    taskInput.value = '';
+    saveTasks(); renderList();
+};
+
+const toggleDone = id => {
+    tasks = tasks.map(t => t.id === id ? { ...t, done: !t.done } : t);
+    saveTasks(); renderList();
+};
+
+const deleteTask = id => {
+    tasks = tasks.filter(t => t.id !== id);
+    saveTasks(); renderList();
+};
+
+const deleteDoneTasks = () => {
+    if (tasks.every(t => !t.done)) {
+        deleteErrorBox.textContent = 'No tasks to delete.';
+        return;
+    }
+    confirmPopup('Delete all completed tasks?', () => {
+        tasks = tasks.filter(t => !t.done);
+        saveTasks(); renderList();
+        deleteErrorBox.textContent = '';
+    });
+};
+
+const deleteAllTasks = () => {
+    if (!tasks.length) {
+        deleteErrorBox.textContent = 'No tasks to delete.';
+        return;
+    }
+    confirmPopup('Delete every task?', () => {
+        tasks = [];
+        saveTasks(); renderList();
+        deleteErrorBox.textContent = '';
+    });
+};
