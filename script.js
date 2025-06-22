@@ -56,11 +56,11 @@ taskTextSpan.classList.add("todo-text");
 
    const doneBtn = document.createElement("button");
    
+doneBtn.textContent = "✔";
 
 
 
 
-   
     deleteBtn.addEventListener("click", () => {
       taskItem.remove();
     });
