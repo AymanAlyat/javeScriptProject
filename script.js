@@ -110,3 +110,50 @@ const renamePopup = (task) => {
     };
 };
 
+
+
+const renderList = () => {
+    todoListBox.innerHTML = ''; // مسح القائمة
+
+    const tab = currentTab();
+    const filtered =
+        tab === 'done' ? tasks.filter(t => t.done)
+            : tab === 'todo' ? tasks.filter(t => !t.done)
+                : tasks;
+
+    filtered.forEach(task => {
+        /* العنصر الحاوي للمهام */
+        const item = document.createElement('div');
+        item.className = 'todo-item';
+        item.dataset.id = task.id;
+
+        /* نص المهمة */
+        const textSpan = document.createElement('span');
+        textSpan.className = 'todo-text';
+        textSpan.textContent = task.text;
+        if (task.done) textSpan.style.textDecoration = 'line-through';
+
+        /* مربّع إنجاز */
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = task.done;
+        checkbox.onchange = () => toggleDone(task.id);
+
+        /* زر تعديل✏️ */
+        const editBtn = document.createElement('button');
+        editBtn.innerHTML = '✏️';
+        editBtn.style.cssText = 'border:none;background:transparent;cursor:pointer;margin:0 4px';
+        editBtn.onclick = () => renamePopup(task);
+
+        /* زر حذف 🗑 */
+        const delBtn = document.createElement('button');
+        delBtn.innerHTML = '🗑️';
+        delBtn.className = 'delete-btn';
+        delBtn.onclick = () => deleteTask(task.id);
+
+        item.append(textSpan, checkbox, editBtn, delBtn);
+        todoListBox.appendChild(item);
+    });
+
+    updateFooterBtns();
+};
