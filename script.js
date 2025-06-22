@@ -79,3 +79,34 @@ const confirmPopup = (msg, onConfirm) => {
     okBtn.onclick = () => { onConfirm(); close(); };
     noBtn.onclick = close;
 };
+
+
+
+const renamePopup = (task) => {
+    const box = document.createElement('div');
+    box.innerHTML = `
+    <h3 style="margin-bottom:12px">Rename task</h3>
+    <input type="text" style="width:100%;padding:8px" value="${task.text}">
+    <div id="renameErr" style="color:red;height:18px;margin:6px 0 12px"></div>
+  `;
+    const saveBtn = document.createElement('button');
+    saveBtn.textContent = 'Save';
+    saveBtn.style.cssText = `padding:8px 16px;cursor:pointer`;
+    box.appendChild(saveBtn);
+
+    const input = box.querySelector('input');
+    const err = box.querySelector('#renameErr');
+    const close = showPopup(box);
+
+    saveBtn.onclick = () => {
+        const message = validateText(input.value);
+        if (message) {
+            err.textContent = message;
+            return;
+        }
+        task.text = input.value.trim();
+        saveTasks(); renderList();
+        close();
+    };
+};
+
