@@ -203,3 +203,19 @@ const deleteAllTasks = () => {
         deleteErrorBox.textContent = '';
     });
 };
+
+
+
+
+
+addTaskBtn.onclick = addTask;
+taskInput.onkeyup = e => e.key === 'Enter' && addTask();
+
+tabsBtns.forEach(btn => btn.onclick = () => {
+    document.querySelector('.tabBtn.active').classList.remove('active');
+    btn.classList.add('active');
+    renderList();
+});
+
+deleteDoneBtn.onclick = deleteDoneTasks;
+deleteAllBtn.onclick = deleteAllTasks;
