@@ -48,3 +48,16 @@ const validateText = txt => {
     return ''; // صحيح
 };
 
+const showPopup = (contentNode) => {
+    const overlay = document.createElement('div');
+    overlay.style.cssText = `
+    position:fixed;inset:0;background:#0007;display:flex;
+    align-items:center;justify-content:center;z-index:999;
+  `;
+    contentNode.style.cssText = `
+    background:#fff;padding:20px;border-radius:8px;max-width:320px;
+  `;
+    overlay.appendChild(contentNode);
+    document.body.appendChild(overlay);
+    return () => document.body.removeChild(overlay); // دالة لإغلاقه
+};
