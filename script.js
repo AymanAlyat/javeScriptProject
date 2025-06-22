@@ -29,3 +29,13 @@ const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2);
 const currentTab = () =>
     document.querySelector('.tabBtn.active').dataset.tab;
 
+
+/* تحديث حالة أزرار الحذف (تُعطَّل إذا لا يوجد ما يُحذَف) */
+const updateFooterBtns = () => {
+    deleteAllBtn.disabled = tasks.length === 0;
+    deleteDoneBtn.disabled = tasks.every(t => !t.done);
+    [deleteAllBtn, deleteDoneBtn].forEach(btn => {
+        btn.style.opacity = btn.disabled ? '.5' : '1';
+        btn.style.cursor = btn.disabled ? 'not-allowed' : 'pointer';
+    });
+};
