@@ -29,7 +29,7 @@ addTaskBtn.addEventListener("click", () => {
 
     // عملت عنصر عشان اضيف التاسك بيه
     const taskItem = document.createElement("div");
-    taskItem.textContent = taskText;
+   
     taskItem.classList.add("todo-item"); 
 
 
@@ -42,7 +42,11 @@ addTaskBtn.addEventListener("click", () => {
 
 const taskTextSpan = document.createElement("span"); //عشان اتحكم بالنص ك نص بدي اعمل سبان انا حر بجوز يجي عبالي الون شغلات معينه
 // هون بعدين بدنا نخلي جوا كل مهمه ثلاث عناصر النص نفسه وسله الزباله والصح  وهاي هون النص
+
 taskTextSpan.textContent = taskText;
+
+
+
 
 taskTextSpan.classList.add("todo-text");
  taskItem.appendChild(taskTextSpan);
@@ -59,7 +63,10 @@ taskTextSpan.classList.add("todo-text");
 doneBtn.textContent = "✔";
 
 doneBtn.classList.add("done-btn");
-
+taskItem.appendChild(doneBtn);//
+doneBtn.addEventListener("click", () => {
+  taskItem.classList.toggle("done"); // رح نضيف ستايل خاص إذا تم الضغط
+});
 
     deleteBtn.addEventListener("click", () => {
       taskItem.remove();
