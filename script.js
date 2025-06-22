@@ -61,3 +61,21 @@ const showPopup = (contentNode) => {
     document.body.appendChild(overlay);
     return () => document.body.removeChild(overlay); // دالة لإغلاقه
 };
+
+
+
+const confirmPopup = (msg, onConfirm) => {
+    const box = document.createElement('div');
+    box.innerHTML = `<p style="margin-bottom:16px">${msg}</p>`;
+    const okBtn = document.createElement('button');
+    const noBtn = document.createElement('button');
+    okBtn.textContent = 'Confirm';
+    noBtn.textContent = 'Cancel';
+    [okBtn, noBtn].forEach(btn => {
+        btn.style.cssText = `margin:0 6px;padding:6px 12px;cursor:pointer`;
+    });
+    box.appendChild(okBtn); box.appendChild(noBtn);
+    const close = showPopup(box);
+    okBtn.onclick = () => { onConfirm(); close(); };
+    noBtn.onclick = close;
+};
