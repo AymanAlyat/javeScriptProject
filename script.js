@@ -37,7 +37,7 @@ const currentTab = () =>
     document.querySelector('.tabBtn.active').dataset.tab;
 
 
-// دالة لتحديث حالة أزرار الحذف (تعطيل/تمكين)
+//  لتحديث حالة أزرار الحذف (تعطيل/تمكين)
 const updateFooterBtns = () => {
     deleteAllBtn.disabled = tasks.length === 0;               // اذا ما في مهام
     deleteDoneBtn.disabled = tasks.every(t => !t.done);       // اذا ما في مكتملة
@@ -54,7 +54,7 @@ const validateText = txt => {
     if (trimmed.length < 5) return 'Task must be at least 5 characters.';
     return ''; // صحيح
 };
-
+//  بتظهر نافذة منبثقة (popup) بمحتوى معين
 const showPopup = (contentNode) => {
     const overlay = document.createElement('div');
     overlay.style.cssText = `
