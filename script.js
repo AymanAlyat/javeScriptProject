@@ -147,13 +147,13 @@ const renderList = () => {
         checkbox.checked = task.done;
         checkbox.onchange = () => toggleDone(task.id);
 
-        /* زر تعديل✏️ */
+        /* زر تعديل */
         const editBtn = document.createElement('button');
         editBtn.innerHTML = '✏️';
         editBtn.style.cssText = 'border:none;background:transparent;cursor:pointer;margin:0 4px';
         editBtn.onclick = () => renamePopup(task);
 
-        /* زر حذف 🗑 */
+        /* زر حذف  */
         const delBtn = document.createElement('button');
         delBtn.innerHTML = '🗑️';
         delBtn.className = 'delete-btn';
@@ -163,21 +163,22 @@ const renderList = () => {
         todoListBox.appendChild(item);
     });
 
-    updateFooterBtns();
+    updateFooterBtns(); // تحديث أزرار الحذف
+};
 };
 
 
 
 const addTask = () => {
-    const message = validateText(taskInput.value);
+    const message = validateText(taskInput.value);// نفحص النص
     if (message) { inputErrorBox.textContent = message; return; }
     inputErrorBox.textContent = '';
-
+    // نضيف المهمة للمصفوفة
     tasks.push({ id: uid(), text: taskInput.value.trim(), done: false });
     taskInput.value = '';
     saveTasks(); renderList();
 };
-
+// تبديل حالة "done" للمهمة
 const toggleDone = id => {
     tasks = tasks.map(t => t.id === id ? { ...t, done: !t.done } : t);
     saveTasks(); renderList();
