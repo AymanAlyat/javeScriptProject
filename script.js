@@ -188,7 +188,7 @@ const deleteTask = id => {
     tasks = tasks.filter(t => t.id !== id);
     saveTasks(); renderList();
 };
-
+//  هون حذف كل المكتملة مع تأكيد 
 const deleteDoneTasks = () => {
     if (tasks.every(t => !t.done)) {
         deleteErrorBox.textContent = 'No tasks to delete.';
@@ -200,7 +200,7 @@ const deleteDoneTasks = () => {
         deleteErrorBox.textContent = '';
     });
 };
-
+// حذف كل المهام مع تأكيد
 const deleteAllTasks = () => {
     if (!tasks.length) {
         deleteErrorBox.textContent = 'No tasks to delete.';
