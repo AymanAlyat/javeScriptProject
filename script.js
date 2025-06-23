@@ -127,10 +127,10 @@ const renderList = () => {
     const filtered =
         tab === 'done' ? tasks.filter(t => t.done)
             : tab === 'todo' ? tasks.filter(t => !t.done)
-                : tasks;
+                : tasks; // كل المهام
 
     filtered.forEach(task => {
-        /* العنصر الحاوي للمهام */
+        /* العنصر اللي بحتوي على كل المهام */
         const item = document.createElement('div');
         item.className = 'todo-item';
         item.dataset.id = task.id;
