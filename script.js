@@ -29,10 +29,10 @@ const loadTasks = () => { /*  هون الكود للتحميل وحفظ ال tas
 const saveTasks = () => localStorage.setItem('tasks', JSON.stringify(tasks));
 
 
-
+// دالة تولد معرف فريد لكل مهمة
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2);
 
-
+// دالة ترجع التب الحالي النشط (data-tab)
 const currentTab = () =>
     document.querySelector('.tabBtn.active').dataset.tab;
 
