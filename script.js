@@ -25,13 +25,14 @@ const loadTasks = () => { /*  هون الكود للتحميل وحفظ ال tas
         tasks = [];
     }
 };
+// بتحول مصفوفة tasks ل JSON وبتخزنها في localstorage 
 const saveTasks = () => localStorage.setItem('tasks', JSON.stringify(tasks));
 
 
-/* إنشاء معرِّف فريد سريع */
+
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2);
 
-/* التبويب النشط حالياً */
+
 const currentTab = () =>
     document.querySelector('.tabBtn.active').dataset.tab;
 
