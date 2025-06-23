@@ -46,7 +46,7 @@ const updateFooterBtns = () => {
         btn.style.cursor = btn.disabled ? 'not-allowed' : 'pointer';
     });
 };
-
+// عشان نتحقق من صحة نص المهمة
 const validateText = txt => {
     const trimmed = txt.trim();
     if (!trimmed) return 'Task cannot be empty.';
@@ -66,11 +66,11 @@ const showPopup = (contentNode) => {
   `;
     overlay.appendChild(contentNode);
     document.body.appendChild(overlay);
+    //  عشان إغلاق النافذة
     return () => document.body.removeChild(overlay); // دالة لإغلاقه
 };
 
-
-
+//هون منعمل زر ال كونفيرم عشان تاكيد الحذف
 const confirmPopup = (msg, onConfirm) => {
     const box = document.createElement('div');
     box.innerHTML = `<p style="margin-bottom:16px">${msg}</p>`;
@@ -88,7 +88,7 @@ const confirmPopup = (msg, onConfirm) => {
 };
 
 
-
+//عشان إعادة تسمية
 const renamePopup = (task) => {
     const box = document.createElement('div');
     box.innerHTML = `
