@@ -229,5 +229,5 @@ tabsBtns.forEach(btn => btn.onclick = () => {
 deleteDoneBtn.onclick = deleteDoneTasks;
 deleteAllBtn.onclick = deleteAllTasks;
 
-loadTasks();
-renderList();
+loadTasks();   // نحمّل المهام المحفوظة
+renderList();  // نعرضها فوراً
