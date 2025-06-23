@@ -216,7 +216,7 @@ const deleteAllTasks = () => {
 
 
 
-
+// ربط الأحداث بالأزرار وعند بداية الصفحة
 addTaskBtn.onclick = addTask;
 taskInput.onkeyup = e => e.key === 'Enter' && addTask();
 
