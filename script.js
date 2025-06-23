@@ -37,12 +37,12 @@ const currentTab = () =>
     document.querySelector('.tabBtn.active').dataset.tab;
 
 
-/* تحديث حالة أزرار الحذف (تُعطَّل إذا لا يوجد ما يُحذَف) */
+// دالة لتحديث حالة أزرار الحذف (تعطيل/تمكين)
 const updateFooterBtns = () => {
-    deleteAllBtn.disabled = tasks.length === 0;
-    deleteDoneBtn.disabled = tasks.every(t => !t.done);
+    deleteAllBtn.disabled = tasks.length === 0;               // اذا ما في مهام
+    deleteDoneBtn.disabled = tasks.every(t => !t.done);       // اذا ما في مكتملة
     [deleteAllBtn, deleteDoneBtn].forEach(btn => {
-        btn.style.opacity = btn.disabled ? '.5' : '1';
+        btn.style.opacity = btn.disabled ? '.5' : '1';     // بتنظم شكل الزر حسب معطّل أو لا
         btn.style.cursor = btn.disabled ? 'not-allowed' : 'pointer';
     });
 };
