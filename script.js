@@ -14,7 +14,7 @@ const deleteAllBtn = document.querySelector('#deleteAllBtn');
 const deleteErrorBox = document.querySelector('#deleteError');
 
 
-let tasks = [];
+let tasks = [];        //هون انشات مصفوفة فارغة عشان نخزن فيها المهام اللي بتنضاف
 
 
 
