@@ -1,7 +1,13 @@
+
+
+
 const taskInput = document.querySelector('#taskInput');
 const addTaskBtn = document.querySelector('#addTaskBtn');
 const inputErrorBox = document.querySelector('#inputError');
-const tabsBtns = document.querySelectorAll('.tabBtn');
+const tabsBtns = document.querySelectorAll('.tabBtn');        /*    هون جمعت عناصر الصفحة من إدخال وعرض المهام (كتابة مهمة جديدة،
+                                                                    التبديل بين القوائم الكل/النشطة/المكتملة، وحذف المهام مع إظهار الأخطاء                
+                                                                      بس id المحدودة بالـ   getElementById بدل CSS لأنها مرنة وتدعم أي محدد querySelector استخدمت*/
+ 
 const todoListBox = document.querySelector('#todoList');
 const deleteDoneBtn = document.querySelector('#deleteDoneBtn');
 const deleteAllBtn = document.querySelector('#deleteAllBtn');
