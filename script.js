@@ -108,11 +108,11 @@ const renamePopup = (task) => {
     saveBtn.onclick = () => {
         const message = validateText(input.value);
         if (message) {
-            err.textContent = message;
+            err.textContent = message; // عرض رسالة الخطأ
             return;
         }
-        task.text = input.value.trim();
-        saveTasks(); renderList();
+        task.text = input.value.trim(); // تحديث النص
+        saveTasks(); renderList();// حفظ ورسم القائمة كمان مرة
         close();
     };
 };
