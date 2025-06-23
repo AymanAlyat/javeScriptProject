@@ -18,9 +18,9 @@ let tasks = [];        //هون انشات مصفوفة فارغة عشان نخ
 
 
 
-const loadTasks = () => {
+const loadTasks = () => { /*  هون الكود للتحميل وحفظ ال tasks*/
     try {
-        tasks = JSON.parse(localStorage.getItem('tasks')) ?? [];        /* تحميل وحفظ */
+        tasks = JSON.parse(localStorage.getItem('tasks')) ?? [];      
     } catch (_) {
         tasks = [];
     }
