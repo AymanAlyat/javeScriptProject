@@ -165,7 +165,6 @@ const renderList = () => {
 
     updateFooterBtns(); // تحديث أزرار الحذف
 };
-};
 
 
 
